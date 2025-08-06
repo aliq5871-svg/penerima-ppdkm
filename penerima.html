@@ -3,16 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>Penerima Anugerah</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      margin-top: 50px;
+      background-color: #e0f0ff; /* 💡 Tukar warna di sini */
+    }
+    #gambar {
+      max-width: 400px;
+      border: 2px solid #555;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    #kategori {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
-<body style="text-align:center;font-family:sans-serif;margin-top:50px;">
+<body>
   <h1 id="nama"></h1>
-  <h2 id="kategori" style="color:darkgreen;"></h2>
-  <img id="gambar" src="" alt="Gambar tidak dijumpai" style="max-width:400px;border:2px solid #555;">
-  
+  <div id="kategori"></div>
+  <img id="gambar" src="" alt="Gambar tidak dijumpai">
   <script>
     const p = new URLSearchParams(window.location.search);
     document.getElementById("nama").innerText = p.get("nama") || "Tiada Nama";
-    document.getElementById("kategori").innerText = p.get("kategori") || "Tiada Kategori";
+    document.getElementById("kategori").innerText = p.get("kategori") || "";
     const g = p.get("gambar");
     if (g) document.getElementById("gambar").src = g;
   </script>
