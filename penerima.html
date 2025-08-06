@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="ms"><head><meta charset="UTF-8"><title>Penerima Anugerah</title></head>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <title>Penerima Anugerah</title>
+</head>
 <body style="text-align:center;font-family:sans-serif;margin-top:50px;">
   <h1 id="nama"></h1>
+  <h2 id="kategori" style="color:darkgreen;"></h2>
   <img id="gambar" src="" alt="Gambar tidak dijumpai" style="max-width:400px;border:2px solid #555;">
+  
   <script>
     const p = new URLSearchParams(window.location.search);
     document.getElementById("nama").innerText = p.get("nama") || "Tiada Nama";
+    document.getElementById("kategori").innerText = p.get("kategori") || "Tiada Kategori";
     const g = p.get("gambar");
-    if(g) document.getElementById("gambar").src = g;
+    if (g) document.getElementById("gambar").src = g;
   </script>
 </body>
 </html>
