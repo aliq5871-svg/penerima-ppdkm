@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Penerima Anugerah</title>
+  <style>
+    body { text-align: center; font-family: sans-serif; margin-top: 50px; }
+    img { max-width: 400px; height: auto; border: 3px solid #000; }
+    h1 { font-size: 2em; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1 id="nama">Nama Penerima</h1>
+  <img id="gambar" src="" alt="Gambar Penerima">
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get("nama");
+    const gambar = params.get("gambar");
+    if (nama) document.getElementById("nama").innerText = nama;
+    if (gambar) document.getElementById("gambar").src = gambar;
+  </script>
+</body>
+</html>
