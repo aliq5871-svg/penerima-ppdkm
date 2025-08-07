@@ -1,48 +1,63 @@
 <!DOCTYPE html>
-<html lang="ms">
-<head>
-  <meta charset="UTF-8">
-  <title>Penerima Anugerah</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-image: url("https://aliq5871-svg.github.io/penerima-ppdkm/assets/Pentas-Mapens2.jpg"); /* Ganti dengan URL anda */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: white;
-      text-shadow: 2px 2px 5px black;
-      font-family: sans-serif;
-      text-align: center;
-    }
-    img {
-      max-width: 400px;
-      border: 5px solid white;
-      box-shadow: 0 0 15px black;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <h1 id="nama"></h1>
-  <h2 id="kategori"></h2>
-  <h3 id="anugerah"></h3>
-  <img id="gambar" src="" alt="Gambar tidak dijumpai">
-  <script>
-    const p = new URLSearchParams(window.location.search);
-    document.getElementById("nama").innerText = p.get("nama") || "Tiada Nama";
-    document.getElementById("kategori").innerText = p.get("kategori") || "";
-    document.getElementById("anugerah").innerText = p.get("anugerah") || "";
-    const g = p.get("gambar");
-    if (g) document.getElementById("gambar").src = g;
-  </script>
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Penerima Anugerah</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-image: url('https://aliq5871-svg.github.io/penerima-ppdkm/assets/Pentas-Mapens2.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        font-family: 'Arial', sans-serif;
+        text-shadow: 2px 2px 5px black;
+      }
+      img#gambar {
+        width: 300px;
+        height: 300px;
+        border-radius: 10px;
+        margin-top: 20px;
+        border: 4px solid white;
+        box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      }
+      h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-size: 32px;
+        margin-bottom: 5px;
+      }
+      h3 {
+        font-size: 28px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="nama">Nama Penerima</h1>
+    <h2 id="kategori">Kategori</h2>
+    <h3 id="anugerah">Anugerah</h3>
+    <img id="gambar" src="" alt="Gambar Penerima">
+    
+    <script>
+      const p = new URLSearchParams(window.location.search);
+      document.getElementById("nama").innerText = p.get("nama") || "Tiada Nama";
+      document.getElementById("kategori").innerText = p.get("kategori") || "Tiada Kategori";
+      document.getElementById("anugerah").innerText = p.get("anugerah") || "Tiada Anugerah";
+      const g = p.get("gambar");
+      if (g) document.getElementById("gambar").src = g;
+    </script>
+  </body>
 </html>
