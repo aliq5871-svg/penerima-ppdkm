@@ -1,72 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Penerima Anugerah</title>
-    <style>
-      body {
-        background-image: url('https://aliq5871-svg.github.io/penerima-ppdkm/assets/Pentas-Mapens2.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        color: white;
-        font-family: 'Arial', sans-serif;
-        text-shadow: 2px 2px 5px black;
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 50px;
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8">
+  <title>Ucapan Tahniah</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://aliq5871-svg.github.io/penerima-ppdkm/assets/Pentas-Mapens2.jpg'); /* Tukar ke latar belakang anda */
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+      box-sizing: border-box;
+    }
 
-      .info {
-        max-width: 60%;
-      }
+    .teks {
+      max-width: 60%;
+      text-shadow: 1px 1px 5px black;
+    }
 
-      h1 {
-        font-size: 48px;
-        margin-bottom: 10px;
-      }
+    .teks h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
 
-      h2 {
-        font-size: 32px;
-        margin-bottom: 5px;
-      }
+    .teks h2 {
+      font-size: 30px;
+      background-color: gold;
+      color: black;
+      padding: 10px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
 
-      h3 {
-        font-size: 28px;
-        margin-top: 5px;
-      }
+    .teks p {
+      font-size: 22px;
+      margin: 5px 0;
+    }
 
-      img#gambar {
-        width: 300px;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 60%;
-        border: 5px solid white;
-        box-shadow: 0 0 20px black;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="info">
-      <h1 id="nama">Nama Penerima</h1>
-      <h2 id="kategori">Kategori</h2>
-      <h3 id="anugerah">Anugerah</h3>
-    </div>
-    <img id="gambar" src="" alt="Gambar Penerima">
-    
-    <script>
-      const p = new URLSearchParams(window.location.search);
-      document.getElementById("nama").innerText = p.get("nama") || "Tiada Nama";
-      document.getElementById("kategori").innerText = p.get("kategori") || "Tiada Kategori";
-      document.getElementById("anugerah").innerText = p.get("anugerah") || "Tiada Anugerah";
-      const g = p.get("gambar");
-      if (g) document.getElementById("gambar").src = g;
-    </script>
-  </body>
+    .gambar {
+      max-width: 35%;
+    }
+
+    .gambar img {
+      width: 100%;
+      border-radius: 50% / 45%; /* Bentuk bulat telur */
+      border: 4px solid white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="teks">
+    <h1>Setinggi-tinggi Tahniah</h1>
+    <h2>SUSAN CHIN SYUK MAN</h2>
+    <p>SM ST. PETER TELIPOK, KOTA KINABALU</p>
+    <br>
+    <p>Sebagai penerima</p>
+    <p><strong>Anugerah Guru Ikon</strong></p>
+    <p>Kategori <strong>Guru STEM</strong></p>
+  </div>
+
+  <div class="gambar">
+    <img src="https://aliq5871-svg.github.io/penerima-ppdkm/assets/11-1.jpg" alt="Gambar Penerima"> <!-- Tukar URL gambar jika perlu -->
+  </div>
+
+</body>
 </html>
