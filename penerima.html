@@ -16,25 +16,10 @@
       text-shadow: 2px 2px 5px black;
       height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      box-sizing: border-box;
-      padding: 40px 60px;
-    }
-
-    .header {
-      text-align: center;
-      font-size: 36px;
-      font-weight: bold;
-      margin-bottom: 30px;
-      text-transform: uppercase;
-    }
-
-    .content {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      flex: 1;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 50px;
     }
 
     .text-box {
@@ -64,16 +49,13 @@
   </style>
 </head>
 <body>
-  <div class="header">Majlis Anugerah Pengurusan Sekolah (MAPenS) 2025</div>
-  <div class="content">
-    <div class="text-box">
-      <h1 id="nama">Nama Penerima</h1>
-      <h2 id="kategori">Kategori</h2>
-      <h3 id="anugerah">Anugerah</h3>
-    </div>
-    <img id="gambar" src="" alt="Penerima">
+  <div class="text-box">
+    <h1 id="nama">Nama Penerima</h1>
+    <h2 id="kategori">Kategori</h2>
+    <h3 id="anugerah">Anugerah</h3>
   </div>
-
+  <img id="gambar" src="" alt="Penerima">
+  
   <script>
     const p = new URLSearchParams(window.location.search);
     document.getElementById("nama").innerText = p.get("nama") || "Tiada Nama";
