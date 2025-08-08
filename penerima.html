@@ -25,15 +25,16 @@
       margin-top: 20px;
     }
 
-    .header img {
-      height: 100px;
+    .header img.logo {
+      height: 90px;
+      margin-bottom: 10px;
     }
 
     .header h1 {
       font-size: 50px;
       color: white;
       text-shadow: 2px 2px 8px black;
-      margin-top: 10px;
+      margin-top: 0;
     }
 
     .content {
@@ -74,22 +75,27 @@
     .gambar {
       max-width: 35%;
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .gambar img {
       width: 100%;
-      border-radius: 50% / 45%;
-      border: 6px solid gold;
-      box-shadow: 0 0 30px rgba(255,215,0,0.8), 0 0 10px black;
-      background-color: white;
-      padding: 5px;
+      border-radius: 50%;
+      padding: 8px;
+      background: white;
+      border: 10px solid gold;
+      box-shadow:
+        0 0 40px rgba(255,215,0,0.8),
+        0 0 20px black inset;
     }
   </style>
 </head>
 <body>
 
   <div class="header">
-    <img src="https://aliq5871-svg.github.io/penerima-ppdkm/assets/ppdKM_2022_RIO" alt="Logo MAPenS">
+    <img class="logo" src="https://aliq5871-svg.github.io/penerima-ppdkm/assets/logo-ppdkm.png" alt="Logo PPD Kota Marudu">
     <h1>Majlis Anugerah Pengurusan Sekolah (MAPenS) 2025</h1>
   </div>
 
