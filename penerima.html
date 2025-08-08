@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Ucapan Tahniah</title>
+  <title>MAPenS 2025</title>
   <style>
     body {
       margin: 0;
@@ -10,76 +10,77 @@
       background-image: url('https://aliq5871-svg.github.io/penerima-ppdkm/assets/Pentas-Mapens2.jpg');
       background-size: cover;
       background-repeat: no-repeat;
+      background-position: center;
       font-family: 'Arial', sans-serif;
       color: white;
+      text-shadow: 2px 2px 5px black;
       height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 50px;
+      flex-direction: column;
+      justify-content: center;
       box-sizing: border-box;
+      padding: 40px 60px;
     }
 
-    .teks {
+    .header {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1;
+    }
+
+    .text-box {
       max-width: 60%;
-      text-shadow: 1px 1px 5px black;
     }
 
-    .teks h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
+    h1 {
+      font-size: 48px;
+      margin: 0;
     }
 
-    .teks h2 {
-      font-size: 30px;
-      background-color: gold;
-      color: black;
-      padding: 10px;
-      display: inline-block;
-      margin-bottom: 10px;
+    h2 {
+      font-size: 32px;
+      margin: 10px 0;
     }
 
-    .teks p {
-      font-size: 22px;
-      margin: 5px 0;
+    h3 {
+      font-size: 28px;
+      margin: 10px 0;
     }
 
-    .gambar {
-      max-width: 35%;
-    }
-
-    .gambar img {
-      width: 100%;
-      border-radius: 50% / 45%; /* Bulat telur */
-      border: 4px solid white;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    img#gambar {
+      max-height: 90vh;
+      height: auto;
+      width: auto;
     }
   </style>
 </head>
 <body>
-
-  <div class="teks">
-    <h1>Setinggi-tinggi Tahniah</h1>
-    <h2 id="nama">Nama Penerima</h2>
-    <p id="sekolah">Nama Sekolah</p>
-    <br>
-    <p>Sebagai penerima</p>
-    <p id="anugerah"><strong>Anugerah</strong></p>
-    <p id="kategori">Kategori <strong>Kategori</strong></p>
-  </div>
-
-  <div class="gambar">
-    <img id="gambar" src="https://aliq5871-svg.github.io/penerima-ppdkm/assets/default.jpg" alt="Gambar Penerima">
+  <div class="header">Majlis Anugerah Pengurusan Sekolah (MAPenS) 2025</div>
+  <div class="content">
+    <div class="text-box">
+      <h1 id="nama">Nama Penerima</h1>
+      <h2 id="kategori">Kategori</h2>
+      <h3 id="anugerah">Anugerah</h3>
+    </div>
+    <img id="gambar" src="" alt="Penerima">
   </div>
 
   <script>
     const p = new URLSearchParams(window.location.search);
-    document.getElementById("nama").innerText = p.get("nama") || "Nama Penerima";
-    document.getElementById("sekolah").innerText = p.get("sekolah") || "Nama Sekolah";
-    document.getElementById("anugerah").innerHTML = "<strong>" + (p.get("anugerah") || "Anugerah") + "</strong>";
-    document.getElementById("kategori").innerHTML = "Kategori <strong>" + (p.get("kategori") || "Kategori") + "</strong>";
-    document.getElementById("gambar").src = p.get("gambar") || "https://aliq5871-svg.github.io/penerima-ppdkm/assets/default.jpg";
+    document.getElementById("nama").innerText = p.get("nama") || "Tiada Nama";
+    document.getElementById("kategori").innerText = p.get("kategori") || "Tiada Kategori";
+    document.getElementById("anugerah").innerText = p.get("anugerah") || "Tiada Anugerah";
+    const g = p.get("gambar");
+    if (g) document.getElementById("gambar").src = g;
   </script>
-
 </body>
 </html>
